@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+body {
+	background: #e2e2e2! important;
+}
+
+.bg-primary{
+	backgruond:#009688 !important;
+}
+
+.banner {
+    width: 100%;
+    height: 93vh;
+    background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(../img/banner2.jpg);
+    color: white;
+    background-size: 120% 120%; /* Stretch image to fill container */
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.my-card{
+	padding:20px;
+	background:#ffffff
+}
+
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 420px;
+  border: 1px solid #9C9C9C;
+background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+border: none;
+color: white;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -33px;
+  margin-left:372px;
+}
+
+
+/* going to style the side bar */
+
+
+.content{
+	
+	margin-left:20%;
+	
+}
+
+/* Fixed Sidebar */
+.sidebar {
+    width: 250px; /* Fixed width */
+    height: 100vh;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    margin-top: 55px;
+}
+
+/* Sidebar Items */
+.sidebar .item {
+    display: block;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s ease, padding-left 0.3s;
+}
+
+/* Hover Effect on Items */
+.sidebar .item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    padding-left: 30px; /* Smooth slide-in effect */
+}
+
+/* Main Content */
+.content {
+    margin-left: 250px; /* Adjust for fixed sidebar */
+    padding: 20px;
+}
+
+/* Responsive Design (for smaller screens) */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 200px; /* Smaller sidebar on mobile */
+    }
+
+    .content {
+        margin-left: 200px; /* Adjust content for small screens */
+    }
+
+    .sidebar .item {
+        font-size: 14px; /* Smaller text for small screens */
+    }
+}
+
+.sidebar a:hover{
+	background:#e2e2e2;
+}
+
+.sidebar .divider{
+	height: .5px;
+	width: 100%;
+	background: pink                                                                                                                                                                                                                                                                              ;
+	margin-top: 10px;
+}
+
+.sidebar .crossBtn{
+	position: absolute;
+	top: 0px;
+	right: 35px;
+	font-size: 30px;
+	text-align: 20px;
+	cursor: point
+	
+}
+
+.myProfilePicture {
+    width: 50px; /* Increase size for better visibility */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid transparent; /* Default border */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    position: relative;
+    cursor: pointer;
+}
+
+/* WhatsApp/Facebook-like hover effect */
+.myProfilePicture:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow */
+    border-color: #25D366; /* WhatsApp green or choose your own */
+}
+
+/* Animated border effect (WhatsApp-like status ring) */
+.myProfilePicture::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    animation: borderPulse 1.5s infinite ease-in-out;
+}
+
+/* Keyframes for animated border */
+@keyframes borderPulse {
+    0% {
+        border-color: rgba(37, 211, 102, 0.1);
+        transform: scale(1);
+    }
+    50% {
+        border-color: rgba(37, 211, 102, 0.6);
+        transform: scale(1.05);
+    }
+    100% {
+        border-color: rgba(37, 211, 102, 0.1);
+        transform: scale(1);
+    }
+}
+
+
+/* 
+search feature css */
+
+.search-container{
+	position:relative;
+}
+.search-result{
+	position:absolute;
+	background:white;
+	width:100%;
+	padding:10px;
+	border:1px solid gray;
+	display:none;
+}
+
+
+
+
+
+
+

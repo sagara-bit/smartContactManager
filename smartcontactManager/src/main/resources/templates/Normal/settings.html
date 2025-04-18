@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(content=~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Password</title>
+</head>
+<body>
+
+<section style="display: flex; justify-content: center; align-items: center; height: 90vh; background: linear-gradient(to right, #ffecd2, #fcb69f); padding: 20px; box-sizing: border-box;">
+
+  <div style="background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); max-width: 400px; width: 100%; animation: fadeSlide 0.5s ease;">
+    <h2 style="margin-bottom: 25px; font-size: 24px; color: #333; text-align: center;">Change Password</h2>
+
+    <form th:action="@{/user/change-password}" method="POST" id="passwordForm">
+      <input  type="password" name="oldPassword" placeholder="Enter old password" required
+             style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
+
+      <input  type="password" name="newPassword" placeholder="Enter new password" required
+             style="width: 100%; padding: 12px; margin-bottom: 25px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
+
+      <div style="display: flex; justify-content: space-between;">
+        <button type="submit"
+                style="flex: 1; background-color: #28a745; color: white; padding: 10px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">
+          Change
+        </button>
+        <button type="reset"
+                style="flex: 1; margin-left: 10px; background-color: #dc3545; color: white; padding: 10px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+          Reset
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Inline animation style (safe inside section) -->
+  <div style="display:none">
+    <style>
+      @keyframes fadeSlide {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </div>
+
+  <script>
+    $(document).ready(() => {
+      $(".item").removeClass("active");
+      $("#settings-link").addClass("active");
+    });
+  </script>
+
+</section>
+
+</body>
+</html>

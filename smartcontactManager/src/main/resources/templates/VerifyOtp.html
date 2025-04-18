@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(content=~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Forget Password</title>
+</head>
+<body style="margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(to right, #e0eafc, #cfdef3); min-height: 100vh;">
+
+    <section>
+        <div id="login" style="animation: fadeIn 1.5s ease;">
+            <h3 style="
+                text-align: center; 
+                color: #222; 
+                padding-top: 30px; 
+                font-size: 28px; 
+                font-weight: bold; 
+                text-transform: uppercase; 
+                letter-spacing: 1.5px; 
+                text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+                animation: slideDown 1s ease-out;
+            ">
+                Forget Password
+            </h3>
+            <div class="container" style="display: flex; justify-content: center; margin-top: 30px;">
+                <div style="
+                    width: 100%;
+                    max-width: 500px;
+                    background-color: white;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+                    padding: 30px;
+                    animation: fadeInUp 1.2s ease-out;
+                ">
+                    <h3 style="
+                        text-align: center;
+                        font-size: 20px;
+                        color: #555;
+                        margin-bottom: 20px;
+                    ">
+                        We have sent an OTP to your email address
+                    </h3>
+                    
+                     					
+							   	   
+		<div th:if="${session.message}" class="container">
+		    <div  class="alert alert-danger my-2 text-center" role="alert">
+		        <span th:text="${session.message.content}"></span>
+		    </div>
+		    
+		<th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>
+		
+		
+		
+		   
+		</div>  
+                    
+ 
+
+                    <form th:action="@{/verify-otp}" method="post">
+                        <div class="form-group">
+                            <input 
+                                required 
+                                type="number" 
+                                name="otp" 
+                                placeholder="Enter OTP here" 
+                                class="form-control" 
+                                style="
+                                    width: 100%; 
+                                    padding: 12px; 
+                                    font-size: 16px; 
+                                    border: 1.5px solid #ccc; 
+                                    border-radius: 8px; 
+                                    background-color: #fff;
+                                    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+                                    transition: all 0.3s ease;
+                                " 
+                                onfocus="this.style.borderColor='#007bff'; this.style.boxShadow='0 0 8px rgba(0,123,255,0.4)'; this.style.backgroundColor='#fdfdfd'"
+                                onblur="this.style.borderColor='#ccc'; this.style.boxShadow='none'; this.style.backgroundColor='#fff'"
+                            />
+                        </div>
+
+                        <div class="text-center" style="margin-top: 20px;">
+                            <button type="submit" class="btn btn-warning" style="
+                                padding: 10px 25px;
+                                font-size: 16px;
+                                border-radius: 30px;
+                                background-color: #f0ad4e;
+                                border: none;
+                                color: white;
+                                font-weight: bold;
+                                transition: background-color 0.3s ease, transform 0.2s ease;
+                            " 
+                            onmouseover="this.style.backgroundColor='#ec971f'; this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.backgroundColor='#f0ad4e'; this.style.transform='scale(1)'">
+                                Verify OTP
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animations -->
+    <style>
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideDown {
+            from {transform: translateY(-30px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+
+        @keyframes fadeInUp {
+            from {transform: translateY(30px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+    </style>
+
+</body>
+</html>
